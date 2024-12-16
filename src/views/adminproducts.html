@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Product Listing Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/adminproducts.css" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house"
+    viewBox="0 0 16 16">
+    <symbol id="home" viewBox="0 0 16 16">
+      <path
+        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+  </svg>
+  <nav class="navbar bg-brown">
+    <div class="container">
+      <a class="navbar-brand" href="/home">
+        <svg class="bi" width="24" height="24">
+          <use xlink:href="#home" />
+        </svg>
+      </a>
+      <a href="/adminusers" class="navbar-btn btn bg">Users</a>
+    </div>
+
+  </nav>
+<div class="container">
+      <h1>Product Listing</h1>
+      <!-- Indicator for the number of products -->
+      <table class="table table-striped">
+        <thead style="width: 100%;">
+          <tr>
+            <th style="width: 20%;">Image</th>
+            <th style="width: 33%;">Name</th>
+            <th style="width: 20%;">Price</th>
+            <th style="width: 17%;">Stock</th>
+            <th style="width: 10%;">Actions</th>
+        </thead>
+        <tbody>
+          <table id="products" class="col col-4">
+            <td><span></span></td>
+          </table>
+        </tbody>
+      </table>
+
+      <!-- Add New Product Form -->
+      <div id="newProductForm" style="display: none">
+        <h2>Add New Product</h2>
+        <form onsubmit="event.preventDefault(); addProduct();">
+          <div class="form-group">
+            <label for="productName">Name</label>
+            <input type="text" class="form-control" id="productName" required />
+          </div>
+          <div class="form-group">
+            <label for="productDescription">Description</label>
+            <textarea
+              class="form-control"
+              id="productDescription"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="productPrice">Price</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input
+                type="number"
+                class="form-control"
+                id="productPrice"
+                step="0.01"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="productStock">Stock</label>
+
+            <input
+              type="number"
+              class="form-control"
+              id="productStock"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="productImage">Image</label>
+            <input type="file" class="form-control-file" id="productImage" />
+          </div>
+          <a href="/admin" type="submit" class="btn btn-success">Add New Product\Edit Product</a
+          >>
+        </form>
+      </div>
+
+      <a href="/admin" type="submit" class="btn btn-success">Add New Product\Edit Product</a>
+    </div>
+
+    <!-- JavaScript code -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="adminproducts.js"></script>
+  </body>
+</html>
